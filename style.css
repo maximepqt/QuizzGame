@@ -35,8 +35,74 @@ header {
 
 .main-content {
   display: flex;
+  flex-direction: column;
   width: 80%;
   border: 1px solid black;
   justify-content: center;
   align-items: center;
+}
+
+#gestionQuestionReponse {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nombreQuestion {
+  display: flex;
+  flex-direction: column;
+}
+
+#userNumberQuestion {
+  margin: 5px 0;
+  width: 200px;
+}
+
+#submit {
+  margin-bottom: 5px;
+}
+
+#Questions {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+
+  padding: 5px 10px;
+}
+
+.ClassQuestions {
+  padding: 5px 10px;
+  margin: 2px 0 2px 0;
+}
+
+#Reponses {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+
+  padding: 5px 10px;
+}
+
+.ClassReponses {
+  padding: 5px 10px;
+  margin: 2px 0 2px 0;
+}
+
+#GameGo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ClassPlayLink {
+  display: flex;
+  background-color: rgb(15, 230, 15);
+  margin: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 5px 20px 5px 20px;
+  visibility: hidden;
 }
