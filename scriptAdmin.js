@@ -71,7 +71,7 @@ document.getElementById("ClassPlayLink").addEventListener("click", function (e) 
 
     localStorage.setItem("questions",JSON.stringify(questions));
     localStorage.setItem("reponses",JSON.stringify(reponses));
-    
+    location.href="index.html";
 
 
 });
