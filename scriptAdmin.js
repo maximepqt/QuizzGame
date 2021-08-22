@@ -5,6 +5,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
     e.preventDefault();
    
     nombreDeQuestion = document.getElementById("userNumberQuestion").value;
+    localStorage.setItem("nombreDeQuestion",nombreDeQuestion);
     isNumberCorrect(nombreDeQuestion);
    
 });
@@ -56,7 +57,23 @@ function isNumberCorrect(nombreDeQuestion){
     
 }
 
+document.getElementById("ClassPlayLink").addEventListener("click", function (e) {
+    e.preventDefault();
+   
+    let questions = [];
+    let reponses = [];
+
+    for (let x = 0; x < nombreDeQuestion; x++) {
+        
+        questions.push(document.getElementsByClassName("ClassQuestions")[x].value);
+        reponses.push(document.getElementsByClassName("ClassReponses")[x].value);
+    }
+
+    localStorage.setItem("questions",JSON.stringify(questions));
+    localStorage.setItem("reponses",JSON.stringify(reponses));
+    
 
 
+});
 
 
