@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="scriptAdmin.js"></script>
+    <script src="scriptAdmin.js" defer></script>
     <title>Admin Quizz</title>
 </head>
 <body>
@@ -14,13 +14,18 @@
             <p>Gestion des Questions Réponses</p>
         </div>
     </header>
+    <form action="POST">
     <div class="main">
         <div class="main-content">
             <div class="nombreQuestion">
-                <input type="text" id="userNumberQuestion">
-                <input type="submit" value="Envoyer">
+                <input type="number" id="userNumberQuestion">
+                <input type="submit" value="Envoyer" id="submit" onclick="isNumberCorrect()">
+            </div>
+            <div class="gestionQuestionReponse">
+
             </div>
         </div>
     </div>
+</form>
 </body>
 </html>
