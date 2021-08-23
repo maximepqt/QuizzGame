@@ -63,6 +63,8 @@ function isNumberCorrect(nombreDeQuestion){
                   return Math.random() - 0.5;
               });
 
+              localStorage.setItem("ar", JSON.stringify(ar));
+
               let nombreDeCouleur =nombreDeQuestion/=nombreDeJoueur;
               let inc =0;
               let questionName,reponseName;

@@ -39,13 +39,16 @@
   cursor: pointer;
 }
 #table .questionResponsesBlock .questionsButton {
-  background: yellow;
+  border: 1px solid black;
+  background-color: beige;
 }
 #table .questionResponsesBlock .responsesButton {
-  background: red;
+  border: 1px solid black;
+  background-color: beige;
 }
 #table .questionResponsesBlock .doneButton {
-  background: green;
+  border: 1px solid black;
+  background-color: beige;
 }
 #table .questionResponsesBlock .overlay {
   width: 100%;

@@ -1,12 +1,16 @@
 let nombreDeQuestion = parseInt(localStorage.getItem("nombreDeQuestion"));
 let questions = JSON.parse(localStorage.getItem("questions"));
 let reponses = JSON.parse(localStorage.getItem("reponses"));
+var retrievedData = localStorage.getItem("ar");
+var ar = JSON.parse(retrievedData);
+console.log(ar);
 //let questions = JSON.parse(localStorage.getItem("questions"));
 
 for(let i = 0;i<nombreDeQuestion;i++){
 
     let questionResponsesBlock = document.createElement("div");
     questionResponsesBlock.classList.add("questionResponsesBlock");
+    questionResponsesBlock.id="blockNumber" +(i+1);
 
     let questionsBlock = document.createElement("div");
     questionsBlock.classList.add("questionsButton", "buttons");
