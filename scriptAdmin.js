@@ -30,7 +30,6 @@ function isNumberCorrect(nombreDeQuestion){
         gestionReponse.innerHTML="";
         gestionDelete.innerHTML="";
         let myNumberInc = nombreDeQuestion 
-        console.log(myNumberInc);
         for (let i = 0; i < nombreDeQuestion; i++) {
 
              gestionQuestion = document.getElementById("Questions");
@@ -54,17 +53,23 @@ function isNumberCorrect(nombreDeQuestion){
             }
             
             //Gestion de notre color randomizer
-            for (var i = 1, ar = []; i < nombreDeQuestion+1; i++) {
-                ar[i] = i;
+            for (var i = 1, arColor = [nombreDeQuestion],arNumber=[nombreDeQuestion]; i < nombreDeQuestion; i++) {
+                arNumber[i] = i;
+                
               }
-            
+           
               // randomize the array
-              ar.sort(function () {
-                  return Math.random() - 0.5;
+              arNumber.sort(function () {
+                  return Math.random() - 0.4;
               });
 
-              localStorage.setItem("ar", JSON.stringify(ar));
+              for(let i = 0;i<nombreDeQuestion;i++){
+                  arColor[i]=arNumber[i];
+              }
+              
 
+              
+            
               let nombreDeCouleur =nombreDeQuestion/=nombreDeJoueur;
               let inc =0;
               let questionName,reponseName;
@@ -73,99 +78,90 @@ function isNumberCorrect(nombreDeQuestion){
                   for(let y = 0;y<nombreDeCouleur;y++){
                       
                       
-                      console.log(i,y,inc);
+                     
 
                       if(inc<10){
                           //Question en theme Rouge
-                          console.log("tab" + ar[inc]);
-                          questionName = "Question" + ar[inc];
-                          console.log(questionName);
+                          questionName = "Question" + arNumber[inc];
                           chgtBG = document.getElementById(questionName);
                           chgtBG.style.backgroundColor ="red";
                         //reponse en theme Rouge
-                        reponseName = "Reponse" + ar[inc];
+                        reponseName = "Reponse" + arNumber[inc];
                         chgtBG = document.getElementById(reponseName);
                         chgtBG.style.backgroundColor ="red";
-                        
+                        arColor[inc]="red";
 
                         
                       }
 
                       if(inc >=10 && inc<20){
                         //Question en theme Rouge
-                        console.log("tab" + ar[inc]);
-                        questionName = "Question" + ar[inc];
-                        console.log(questionName);
+                        questionName = "Question" + arNumber[inc];
                         chgtBG = document.getElementById(questionName);
                         chgtBG.style.backgroundColor ="blue";
                       //reponse en theme Rouge
-                      reponseName = "Reponse" + ar[inc];
+                      reponseName = "Reponse" + arNumber[inc];
                       chgtBG = document.getElementById(reponseName);
                       chgtBG.style.backgroundColor ="blue";
-                      
+                      arColor[inc]="blue";
                       }
 
                       if(inc >=20 && inc<30){
                         //Question en theme Rouge
-                        console.log("tab" + ar[inc]);
-                        questionName = "Question" + ar[inc];
-                        console.log(questionName);
+                        questionName = "Question" + arNumber[inc];
                         chgtBG = document.getElementById(questionName);
                         chgtBG.style.backgroundColor ="green";
                       //reponse en theme Rouge
-                      reponseName = "Reponse" + ar[inc];
+                      reponseName = "Reponse" + arNumber[inc];
                       chgtBG = document.getElementById(reponseName);
                       chgtBG.style.backgroundColor ="green";
+                      arColor[inc]="green";
                       
                       }
 
                       if(inc >=30 && inc<40){
                         //Question en theme Rouge
-                        console.log("tab" + ar[inc]);
-                        questionName = "Question" + ar[inc];
-                        console.log(questionName);
+                        questionName = "Question" + arNumber[inc];
                         chgtBG = document.getElementById(questionName);
                         chgtBG.style.backgroundColor ="yellow";
                       //reponse en theme Rouge
-                      reponseName = "Reponse" + ar[inc];
+                      reponseName = "Reponse" + arNumber[inc];
                       chgtBG = document.getElementById(reponseName);
                       chgtBG.style.backgroundColor ="yellow";
-                      
+                      arColor[inc]="yellow";
                       }
 
                       if(inc >=40 && inc<50){
                         //Question en theme Rouge
-                        console.log("tab" + ar[inc]);
-                        questionName = "Question" + ar[inc];
-                        console.log(questionName);
+                        questionName = "Question" + arNumber[inc];
                         chgtBG = document.getElementById(questionName);
                         chgtBG.style.backgroundColor ="purple";
                       //reponse en theme Rouge
-                      reponseName = "Reponse" + ar[inc];
+                      reponseName = "Reponse" + arNumber[inc];
                       chgtBG = document.getElementById(reponseName);
                       chgtBG.style.backgroundColor ="purple";
-                      
+                      arColor[inc]="purple";
                       }
 
                       if(inc >=50 && inc<60){
                         //Question en theme Rouge
-                        console.log("tab" + ar[inc]);
-                        questionName = "Question" + ar[inc];
-                        console.log(questionName);
+                        questionName = "Question" + arNumber[inc];
                         chgtBG = document.getElementById(questionName);
                         chgtBG.style.backgroundColor ="orange";
                       //reponse en theme Rouge
-                      reponseName = "Reponse" + ar[inc];
+                      reponseName = "Reponse" + arNumber[inc];
                       chgtBG = document.getElementById(reponseName);
                       chgtBG.style.backgroundColor ="orange";
                       
+                      arColor[inc]="orange";
                       }
                       inc +=1;
                   }
               }
-           
+              localStorage.setItem("arColor", JSON.stringify(arColor));
+              localStorage.setItem("arNumber", JSON.stringify(arNumber));
             PlayLink.style.visibility = "visible";
-
+            console.log(arColor,arNumber);
 
             
     }

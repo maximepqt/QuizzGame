@@ -1,9 +1,12 @@
 let nombreDeQuestion = parseInt(localStorage.getItem("nombreDeQuestion"));
 let questions = JSON.parse(localStorage.getItem("questions"));
 let reponses = JSON.parse(localStorage.getItem("reponses"));
-var retrievedData = localStorage.getItem("ar");
-var ar = JSON.parse(retrievedData);
-console.log(ar);
+var retrievedDataNumber = localStorage.getItem("arNumber");
+var arNumber = JSON.parse(retrievedDataNumber);
+var retrievedDataColor = localStorage.getItem("arColor");
+var arColor = JSON.parse(retrievedDataColor);
+
+console.log(arNumber,arColor);
 //let questions = JSON.parse(localStorage.getItem("questions"));
 
 for(let i = 0;i<nombreDeQuestion;i++){
@@ -56,4 +59,21 @@ for(let i = 0;i<nombreDeQuestion;i++){
         document.getElementById("display").innerHTML = "";
     });
 
+    
+    
+    
+    
+    
+    
+
+
+}
+
+for(let i = 0;i<nombreDeQuestion;i++){
+
+monBlock = "blockNumber" +arNumber[i];
+console.log(monBlock);
+let monBlockBg = document.getElementById(monBlock);
+console.log(monBlockBg);
+monBlockBg.style.backgroundColor= arColor[i];
 }
