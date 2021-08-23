@@ -54,7 +54,8 @@ header {
   flex-direction: column;
 }
 
-#userNumberQuestion {
+#userNumberQuestion,
+#userNumberPlayer {
   margin: 5px 0;
   width: 200px;
 }
